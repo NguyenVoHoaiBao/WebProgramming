@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vật Liệu ABK</title>
+    <link rel="icon" href="imageWeb/IconWEB.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="TagWeb">
+        <div class="logo">
+            <img src="imageWeb/ABK.png" width="55" onclick="reloadPage()" title="VatLieuABK">
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-input" id="search-input" oninput="showSuggestions()">
+            <button class="search-button">Search</button>
+            <ul class="suggestions" id="suggestions-list"></ul>
+        </div>
+        <div class="auth-buttons"></div>
+            <button class="auth-btn" onclick="login()">Đăng Nhập</button>
+            <button class="auth-btn" onclick="register()"> Đăng kí </button>
+            <img class="giohang" src="imageWeb/GioHang.png" width="40" alt="">
+        </div>
+
+    </div>
+    <div>
+        
+    </div>
+
+    <script>
+        const suggestions = [
+            "Xi măng",
+            "Gạch",
+            "Cát",
+            "Đá",
+            "Thép",
+            "Gỗ",
+            "Sơn",
+            "Kính",
+            "Sắt",
+            "Tấm lợp",
+            "Nhựa đường",
+            "Vữa",
+            "Gạch men",
+            "Gỗ công nghiệp"
+        ];
+
+        function showSuggestions() {
+            const input = document.getElementById("search-input").value.toLowerCase();
+            const suggestionsList = document.getElementById("suggestions-list");
+            suggestionsList.innerHTML = ""; 
+            if (input.length > 0) {
+                const filteredSuggestions = suggestions.filter(item => item.toLowerCase().includes(input));
+
+                filteredSuggestions.forEach(suggestion => {
+                    const li = document.createElement("li");
+                    li.textContent = suggestion;
+                    li.onclick = () => selectSuggestion(suggestion);
+                    suggestionsList.appendChild(li);
+                });
+            }
+        }
+
+        function selectSuggestion(suggestion) {
+            document.getElementById("search-input").value = suggestion;
+            document.getElementById("suggestions-list").innerHTML = ""; 
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=5, user-scalable=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cc9450bd42.js" crossorigin="anonymous"></script>
+    <title>Vật Liệu ABK</title>
+</head>
+<body>
+    <div class="TagWeb">
+        <div class="logo">
+            <img class="img1" src="imageWeb/ABK.png" width="55" onclick="reloadPage()" title="VatLieuABK">
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-input" id="search-input" oninput="showSuggestions()">
+            <button class="search-button">Search</button>
+            <ul class="suggestions" id="suggestions-list"></ul>
+        </div>
+
+        <div class="auth-buttons">
+            <button class="auth-btn" onclick="login()">Đăng Nhập</button>
+            <button class="auth-btn" onclick="register()">Đăng kí</button>
+            <img class="giohang" src="imageWeb/GioHang.png" width="40" alt="Giỏ Hàng">
+        </div>
+    </div>
+
+    <div>
+        <button class="toggle-sidebar" id="toggle-sidebar">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+        <ul class="sidebar" id="sidebar">
+            <li><a href="#"><i class="fa-solid fa-trowel"></i>Dụng cụ</a></li>
+            <li><a href="#"><i class="fa-solid fa-brush"></i> Các loại sơn</a></li>   
+            <li><a href="#"><i class="fa-solid fa-door-open"></i> Đồ gia dụng</a></li>
+            <li><a href="#"><i class="fa-solid fa-glass-water-droplet"></i> Thiết bị điện nước</a></li>
+            <li><a href="#"><i class="fa-solid fa-kitchen-set"></i> Đồ dùng nhà bếp</a></li>
+            <li><a href="#"><i class="fa-solid fa-star"></i> Vật dụng khác....</a></li>
+        </ul>
+        </ul>
+    
+        <div class="taskbar">
+            <div class="menubar"> 
+                 <li><a href="#">Trang Chủ</a></li>
+                 <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Khuyến Mãi</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </div>
+       
+        </div>
+
+    
+    <script src="func.js"></script>
+</body>
+</html>
