@@ -1,0 +1,109 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #be5b5b;
+}
+
+.TagWeb {
+    background: linear-gradient(to left, #00203f, #adefd1);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    color: #ccc;
+}
+
+.suggestions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 25px 25px;
+    position: absolute;
+    top: 45px;
+    z-index: 1001;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    align-items: center;
+    
+}
+
+.auth-btn {
+    background-color: #00203f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    
+    
+}
+
+.auth-btn:hover {
+    background-color: #555;
+}
+
+.giohang {
+    margin-right: 20px;
+
+}
