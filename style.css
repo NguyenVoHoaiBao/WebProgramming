@@ -83,7 +83,7 @@ body {
 
 .auth-buttons {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -102,7 +102,8 @@ body {
 }
 
 .giohang {
-    margin-right: 20px;
+    margin-right: 40px;
+    cursor: pointer;
 }
 
 .menu {
@@ -110,10 +111,12 @@ body {
 }
 
 .toggle-sidebar {
+    position: fixed; /* Giữ nút cố định trên màn hình */
+    right: 10px; /* Cách mép phải của cửa sổ 10px */
+    top: 75px;
     border: none;
     background-color: #fff;
-    font-weight: 10px;
-    position: absolute;
+    font-weight: 10px;  
     right: 10px;
     top: 75px; 
     cursor: pointer;
