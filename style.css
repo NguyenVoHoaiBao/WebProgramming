@@ -47,7 +47,7 @@ body {
 .search-button {
     background-color: transparent;
     border: none;
-    color: whit;
+    color: black; /* Sửa lỗi 'color: whit;' */
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
@@ -83,7 +83,7 @@ body {
 
 .auth-buttons {
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Giữ lại giá trị hợp lý */
     align-items: center;
 }
 
@@ -102,7 +102,8 @@ body {
 }
 
 .giohang {
-    margin-right: 20px;
+    margin-right: 40px; /* Sử dụng giá trị đúng */
+    cursor: pointer;
 }
 
 .menu {
@@ -110,12 +111,12 @@ body {
 }
 
 .toggle-sidebar {
+    position: fixed; /* Giữ nút cố định trên màn hình */
+    right: 10px; /* Cách mép phải của cửa sổ 10px */
+    top: 75px;
     border: none;
     background-color: #fff;
-    font-weight: 10px;
-    position: absolute;
-    right: 10px;
-    top: 75px; 
+    font-weight: 10px;  
     cursor: pointer;
     border-radius: 5px;
     color: #000;
@@ -141,7 +142,7 @@ body {
 }
 
 .sidebar-open {
-    left: 0; /* Show when open */
+    left: 0; /* Hiển thị sidebar khi mở */
 }
 
 .sidebar li {
@@ -172,6 +173,7 @@ body {
 .sidebar li i {
     margin-right: 5px;
 }
+
 .taskbar {
     list-style: none;
     display: flex;
@@ -181,9 +183,11 @@ body {
     margin-top: 65px;
     padding: 25px 0; /* Tăng padding để làm tăng chiều cao của thanh */
 }
+
 .menubar li {
     display: inline;
 }
+
 .menubar {
     list-style: none;
     display: flex;
@@ -200,7 +204,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.mbarbar a:hover {
+.menubar a:hover {
     background-color: #ddd;
     border-radius: 5px;
 }
