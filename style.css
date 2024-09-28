@@ -3,12 +3,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+<<<<<<< HEAD
     overflow-x: hidden;
     /* Prevent horizontal overflow */
+=======
+    overflow-x: hidden; /* Prevent horizontal overflow */
+
+>>>>>>> 71f6fb6 (Update Data)
 }
 
 .TagWeb {
-    background: linear-gradient(to left, #00203f, #adefd1);
+    background: linear-gradient(to left, #00B7FF, #ffffc7);
     padding: 10px;
     position: fixed;
     top: 0;
@@ -133,7 +138,7 @@ body {
     height: 100vh;
     width: 200px;
     list-style: none;
-    background-color: #fff;
+    background-color: #4a4a4a00;
     position: fixed;
     top: 55px;
     left: -300px;
