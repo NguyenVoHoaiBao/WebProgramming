@@ -115,23 +115,28 @@ body {
     z-index: 1001;
 }
 
+/* Điều chỉnh cho nút toggle sidebar */
 .toggle-sidebar {
     border: none;
     background-color: transparent;
     font-weight: 10px;
-    position: absolute;
-    left: 350px;
-    top: 73px;
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px; 
     cursor: pointer;
-    /*   border-radius: 5px;*/
     color: white;
-    /* box-shadow: 0 0 5px #ccc; */
-    /*border: 1px solid #000;*/
     width: auto;
     height: 50px;
-    z-index: 1001;
+    z-index: 1001; 
     padding: 10px 20px;
+    background-color: #005c42;
+    border-radius: 10px;
 }
+
+.toggle-sidebar:hover {
+    background-color: #555; 
+}
+
 
 
 .sidebar {
@@ -188,20 +193,26 @@ body {
     justify-content: center;
     gap: 20px;
     background-color: #3F9980;
-    margin-top: 65px;
-    padding: 20px;
-    /* Tăng padding để làm tăng chiều cao của thanh */
+    margin-top: 30px;
+    padding: 15px;
+    
+  
+    align-items: center;
+  
+   
 }
 
 .menubar li {
     display: inline;
 }
 
+/* .menubar styling */
 .menubar {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 60px;
+    flex-wrap: wrap; 
 }
 
 .menubar a {
@@ -209,12 +220,34 @@ body {
     color: white;
     font-weight: bold;
     font-size: 20px;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+    padding: 10px 10px;
+    transition: background-color 0.3s, font-size 0.3s, padding 0.3s;
+    border-radius: 10px;
 }
 
 .menubar a:hover {
-    background-color: #ddd;
-    border-radius: 5px;
+    background-color: #005c42;
+    border-radius: 10px;
 }
 
+
+@media (max-width: 768px) {
+    .menubar {
+        gap: 30px; 
+
+    .menubar a {
+        font-size: 16px; 
+        padding: 8px 5px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .menubar {
+        gap: 10px;
+    }
+
+    .menubar a {
+        font-size: 14px;
+        padding: 5px 3px; 
+    }
+}
