@@ -3,13 +3,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-<<<<<<< HEAD
     overflow-x: hidden;
-    /* Prevent horizontal overflow */
-=======
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden; 
 
->>>>>>> 71f6fb6 (Update Data)
+
 }
 
 .TagWeb {
@@ -115,7 +112,7 @@ body {
     z-index: 1001;
 }
 
-/* Điều chỉnh cho nút toggle sidebar */
+
 .toggle-sidebar {
     border: none;
     background-color: transparent;
@@ -155,7 +152,7 @@ body {
 
 .sidebar-open {
     left: 0;
-    /* Show when open */
+   
 }
 
 .sidebar li {
@@ -188,6 +185,7 @@ body {
 }
 
 .taskbar {
+
     list-style: none;
     display: flex;
     justify-content: center;
@@ -195,7 +193,8 @@ body {
     background-color: #3F9980;
     margin-top: 30px;
     padding: 15px;
-    
+    position: relative; 
+    top: 38px;
   
     align-items: center;
   
@@ -206,7 +205,7 @@ body {
     display: inline;
 }
 
-/* .menubar styling */
+
 .menubar {
     list-style: none;
     display: flex;
@@ -250,4 +249,4 @@ body {
         font-size: 14px;
         padding: 5px 3px; 
     }
-}
+}}

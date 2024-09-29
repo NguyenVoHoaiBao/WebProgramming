@@ -71,9 +71,9 @@ function showSuggestions() {
             li.onclick = () => selectSuggestion(suggestion);
             suggestionsList.appendChild(li);
         });
-        suggestionsList.style.display = "block"; // Hiển thị gợi ý
+        suggestionsList.style.display = "block"; 
     } else {
-        suggestionsList.style.display = "none"; // Ẩn gợi ý khi không có từ khóa
+        suggestionsList.style.display = "none"; 
     }
 }
 
