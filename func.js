@@ -96,12 +96,78 @@ toggleButton.addEventListener("click", () => {
     sidebar.classList.toggle("sidebar-open");
 });
 
-// Đăng nhập và đăng ký
+// Hiển thị form đăng nhập khi nhấn vào nút Đăng nhập
+document.getElementById('login-btn').addEventListener('click', function() {
+    document.getElementById('register-web').style.display = 'none';
+    document.getElementById('login-web').style.display = 'block';
+});
+
+// Sinh mã OTP ngẫu nhiên
+function generateRandomOTP() {
+    const otp = Math.floor(100000 + Math.random() * 900000); // Tạo OTP 6 chữ số ngẫu nhiên
+    document.getElementById('otp').value = otp; // Tự động điền OTP vào trường input
+}
+
+// Hiển thị form đăng ký và sinh OTP khi nhấn vào nút Đăng ký
+document.getElementById('register-btn').addEventListener('click', function() {
+    document.getElementById('login-web').style.display = 'none';
+    document.getElementById('register-web').style.display = 'block';
+    generateRandomOTP(); // Gọi hàm sinh OTP
+});
+
+// Kiểm tra nếu thông tin tài khoản đã được lưu trong LocalStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const rememberedUsername = localStorage.getItem('username');
+    const rememberedPassword = localStorage.getItem('password');
+    
+    if (rememberedUsername && rememberedPassword) {
+        document.getElementById('username').value = rememberedUsername;
+        document.getElementById('password').value = rememberedPassword;
+        document.getElementById('remember_me').checked = true;
+    }
+});
+
 function login() {
-    alert("Đăng nhập hệ thống");
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const rememberMe = document.getElementById('remember_me').checked;
+    
+    // Kiểm tra nếu người dùng muốn ghi nhớ thông tin đăng nhập
+    if (rememberMe) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);  // Hãy mã hóa mật khẩu trước khi lưu ở đây.
+    } else {
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+    }
+    
+    // Thực hiện logic đăng nhập
+    console.log("Đăng nhập với tài khoản: ", username, password);
+
+    // Ví dụ: Chuyển hướng người dùng sau khi đăng nhập
+    // window.location.href = "/home";
 }
 
 function register() {
-    alert("Đăng ký hệ thống");
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const otp = document.getElementById('otp').value;
+
+    // Kiểm tra thông tin hợp lệ
+    if (password !== confirmPassword) {
+        alert("Mật khẩu không khớp!");
+        return;
+    }
+
+    // Lưu tài khoản vào file SQL (Chỉ là một ví dụ, cần có server để thực hiện)
+    const sql = `INSERT INTO users (username, password) VALUES ('${username}', '${password}');`;
+    console.log("Lưu vào SQL:", sql);
+
+    
+    // Reset form đăng ký
+    document.getElementById('registerForm').reset();
 }
+
+
 
