@@ -126,7 +126,7 @@ body {
     height: 50px;
     z-index: 1001;
     padding: 10px 20px;
-    background-color: #005c42;
+    background-color: #3F9980;
     border-radius: 10px;
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 .sidebar li:hover {
-    border-left: 5px solid #000;
+    border-left: 5px solid gray;
 }
 
 .sidebar li a {
@@ -180,7 +180,7 @@ body {
 }
 
 .sidebar li a:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(228, 228, 228);
 }
 
 .sidebar li i {
@@ -364,3 +364,4 @@ input[type="password"] {
 .notification.hide {
     display: none;
 }
+

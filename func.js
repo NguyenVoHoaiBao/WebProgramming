@@ -313,6 +313,7 @@ function login() {
   // window.location.href = "/home";
 }
 
+
 function register() {
   const username = document.getElementById("register-username").value;
   const password = document.getElementById("register-password").value;
@@ -375,3 +376,4 @@ function closeRegistrationWindow() {
   document.getElementById("registerForm").reset();
 }
  
+
