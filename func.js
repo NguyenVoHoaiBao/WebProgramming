@@ -343,7 +343,10 @@ function register() {
     registerNotification.textContent = "Vui lòng điền đầy đủ thông tin!";
     registerNotification.classList.remove("hide");
     registerNotification.classList.add("error", "show");
-  } else if (password !== confirmPassword) {
+ } else if (password !== confirmPassword) {
+    document.getElementById("register-password").value = "";
+    document.getElementById("confirm-password").value = "";
+
     registerNotification.textContent = "Mật khẩu không khớp!";
     registerNotification.classList.remove("hide");
     registerNotification.classList.add("error", "show");
@@ -351,10 +354,12 @@ function register() {
     registerNotification.textContent = "Tài khoản đăng ký thành công!";
     registerNotification.classList.remove("hide");
     registerNotification.classList.add("success", "show");
-    document.getElementById("registerForm").reset();
+     
     setTimeout(() => {
       closeRegistrationWindow();
     }, 1000);
+
+    
   }
 
   // Lưu tài khoản vào file SQL (Chỉ là một ví dụ, cần có server để thực hiện)
@@ -367,5 +372,6 @@ function register() {
 function closeRegistrationWindow() {
   const registrationWindow = document.getElementById("register-web");
   registrationWindow.style.display = "none";
+  document.getElementById("registerForm").reset();
 }
  
