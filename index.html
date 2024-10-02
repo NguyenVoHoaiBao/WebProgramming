@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=5, user-scalable=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cc9450bd42.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="imageWeb/IconWEB.ico" type="image/x-icon">
+    <title>Vật Liệu ABK</title>
+    <title>Trang trí nội thất ABK</title>
+</head>
+<body>
+    <div class="TagWeb">
+        <div class="logo">
+            <img class="img1" src="imageWeb/ABK.png" width="55" onclick="reloadPage()" title="VatLieuABK">
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-input" id="search-input" oninput="showSuggestions()">
+            <button class="search-button">Search</button>
+            <ul class="suggestions" id="suggestions-list"></ul>
+        </div>
+
+        <div class="auth-buttons">
+            <button class="auth-btn" id="login-btn" onclick="login()">Đăng Nhập</button>
+            <button class="auth-btn" id="register-btn" onclick="register()">Đăng kí</button>
+            <img class="giohang" src="imageWeb/GioHang.png" width="40" alt="Giỏ Hàng">
+        </div>
+    </div>
+
+    <div>
+        <button class="toggle-sidebar" id="toggle-sidebar">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+
+    <div>
+        <ul class="sidebar" id="sidebar">
+            <li><a href="#"><i class="fa-solid fa-couch"></i> Nội thất Phòng Khách</a></li>
+            <li><a href="#"><i class="fa-solid fa-utensils"></i> Nội thất Nhà Bếp</a></li>   
+            <li><a href="#"><i class="fa-solid fa-bed"></i> Nội thất Phòng Ngủ</a></li>
+            <li><a href="#"><i class="fa-solid fa-bath"></i> Nội thất Phòng Tắm</a></li>
+            <li><a href="#"><i class="fa-solid fa-chair"></i> Nội thất Nhà Ăn</a></li>
+            <li><a href="#"><i class="fa-solid fa-box-open"></i> Vật dụng khác...</a></li>
+
+        </ul>
+    </div>
+    <div class="dangnhap"></div>
+        <div class="login" id="login-web" style="display: none;">
+            <h2 class="tenbang1">Đăng nhập</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label class="lb1" for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="input-group">
+                    <label class="lb1" for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="input-group remember-me">
+                    <input type="checkbox" id="remember_me" name="remember_me">
+                    <label class="lb1" for="remember_me">Ghi nhớ tài khoản</label>
+                </div>
+                <button class=" dangnhap" type="button" onclick="login()">Đăng nhập</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="dangki">
+        <div class="register" id="register-web" style="display: none;">
+            <h2 class="tenbang1">Đăng ký</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label class="lb1" for="register-username">Tài khoản</label>
+                    <input type="text" id="register-username" name="register-username">
+                </div>
+                <div class="input-group">
+                    <label class="lb1" for="register-password">Mật khẩu</label>
+                    <input type="password" id="register-password" name="register-password">
+                </div>
+                <div class="input-group">
+                    <label class="lb1" for="confirm-password">Nhập lại mật khẩu</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+                <div class="input-group">
+                    <label class="lb1" for="otp">Mã OTP</label>
+                    <input type="text" id="otp" name="otp">
+                </div>
+                <button class="dangnhap" type="button" onclick="register()">Đăng ký</button>
+            </form>
+        </div>
+
+    </div>
+    
+
+    <div class="taskbar">
+        <div class="menubar"> 
+            <li><a href="#">Sản Phẩm chính</a></li>
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Ưu đãi</a></li>
+            <li><a href="#">Liên Hệ ngay</a></li>
+        </div>
+    </div>
+    
+    <div>
+        <div>
+            <img src="imageWeb/dc_Bua.gif" alt="">
+        </div>
+        <div>
+            <img src="imageWeb/dc_Bua.gif" alt="">
+        </div>
+    </div>
+
+x
+    <script src="func.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-x: hidden; 
+
+
+}
+
+.TagWeb {
+    background: linear-gradient(to left, #00B7FF, #ffffc7);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    color: #ccc;
+}
+
+.suggestions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 25px 25px;
+    position: absolute;
+    top: 45px;
+    z-index: 1001;
+    display: none;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.auth-btn {
+    background-color: #00203f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.auth-btn:hover {
+    background-color: #555;
+}
+
+.giohang {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menu {
+    z-index: 1001;
+}
+
+
+.toggle-sidebar {
+    border: none;
+    background-color: transparent;
+    font-weight: 10px;
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px; 
+    cursor: pointer;
+    color: white;
+    width: auto;
+    height: 50px;
+    z-index: 1001; 
+    padding: 10px 20px;
+    background-color: #005c42;
+    border-radius: 10px;
+}
+
+.toggle-sidebar:hover {
+    background-color: #555; 
+}
+
+
+
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    list-style: none;
+    background-color: #4a4a4a00;
+    position: fixed;
+    top: 55px;
+    left: -300px;
+    transition: 0.5s;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0 10px #000;
+}
+
+.sidebar-open {
+    left: 0;
+   
+}
+
+.sidebar li {
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.sidebar li:hover {
+    border-left: 5px solid #000;
+}
+
+.sidebar li a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-transform: capitalize;
+    transition: 0.3s;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.sidebar li a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar li i {
+    margin-right: 5px;
+}
+
+.taskbar {
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #3F9980;
+    margin-top: 30px;
+    padding: 10px;
+    position: relative; 
+    top: 18px;
+  
+    align-items: center;
+  
+   
+}
+
+.menubar li {
+    display: inline;
+}
+
+
+.menubar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap; 
+}
+
+.menubar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 10px;
+    transition: background-color 0.3s, font-size 0.3s, padding 0.3s;
+    border-radius: 10px;
+}
+
+.menubar a:hover {
+    background-color: #005c42;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .menubar {
+        gap: 30px; 
+
+    .menubar a {
+        font-size: 16px; 
+        padding: 8px 5px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .menubar {
+        gap: 10px;
+    }
+
+    .menubar a {
+        font-size: 14px;
+        padding: 5px 3px; 
+    }
+}}
+.login {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.411);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tenbang1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.lb1 {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.dangnhap {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dangnhap:hover {
+    background-color: #218838;
+}
+.register {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.411);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
