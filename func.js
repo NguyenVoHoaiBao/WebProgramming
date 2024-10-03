@@ -375,3 +375,16 @@ const suggestions = [
     registrationWindow.style.display = "none";
     document.getElementById("registerForm").reset();
   }
+  function closeForm() {
+    document.getElementById('login-web').style.display = 'none';
+    document.getElementById('register-web').style.display = 'none';
+}
+// Hiển thị popup khi trang web tải xong
+window.onload = function() {
+  document.getElementById('sale-popup').style.display = 'flex';
+}
+
+// Đóng popup khi nhấn nút "X"
+document.getElementById('close-popup').addEventListener('click', function() {
+  document.getElementById('sale-popup').style.display = 'none';
+});
