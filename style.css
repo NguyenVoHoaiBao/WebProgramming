@@ -106,6 +106,7 @@ body {
 
 .giohang {
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .menu {
@@ -126,7 +127,7 @@ body {
     height: 50px;
     z-index: 1001;
     padding: 10px 20px;
-    background-color: #3F9980;
+    background-color: #005c42;
     border-radius: 10px;
 }
 
@@ -138,11 +139,11 @@ body {
 
 .sidebar {
     height: 100vh;
-    width: 200 px;
+    width: 200px;
     list-style: none;
     background-color: #4a4a4a00;
     position: fixed;
-    top: 90px;
+    top: 85px;
     left: -300px;
     transition: 0.5s;
     border-top-right-radius: 20px;
@@ -163,24 +164,23 @@ body {
 }
 
 .sidebar li:hover {
-    border-left: 5px solid gray;
+    border-left: 5px solid #000;
 }
 
 .sidebar li a {
     display: block;
     width: 100%;
     padding: 20px;
-    padding-left: 5px;
     text-transform: capitalize;
     transition: 0.3s;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     text-decoration: none;
-    color: #333;
+    color: black;
 }
 
 .sidebar li a:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sidebar li i {
@@ -329,10 +329,6 @@ input[type="password"] {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.register-web.hide{
-    display: block;
-}
-
 
 .notification {
     padding: 15px;
@@ -340,7 +336,8 @@ input[type="password"] {
     border: 1px solid transparent;
     border-radius: 4px;
     font-weight: bold;
-    display: none; /* Ẩn thông báo ban đầu */
+    display: none;
+    /* Ẩn thông báo ban đầu */
     width: auto;
     text-align: center;
 }
@@ -365,3 +362,158 @@ input[type="password"] {
     display: none;
 }
 
+.chat-button {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    background-color: #005c42;
+    color: white;
+    border: none;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Popup quảng cáo */
+.sale-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    background: linear-gradient(to left, #FFBBBB, #A9F1DF);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 620px;
+    width: 80%;
+    animation: fadeIn 1s;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Hiệu ứng mờ dần */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.chat-container {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 90px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    text-align: ;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    color: #005c42;
+}
+
+.chat-content {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto; 
+    min-height: 280px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.chat-footer button {
+    background-color: #005c42;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.chat-footer button:hover {
+    background-color: #004730;
+}
+
+.auto-chat {
+    background-color:#005c42 ;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 50px;
+    
+}

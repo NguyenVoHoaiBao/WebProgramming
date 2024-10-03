@@ -321,6 +321,8 @@ function register() {
   const otp = document.getElementById("otp").value;
   const registerNotification = document.getElementById("notification");
 
+
+
   registerNotification.classList.remove("show");
   "show", "error", "success";
   registerNotification.classList.add("hide");
@@ -360,6 +362,8 @@ function register() {
       closeRegistrationWindow();
     }, 1000);
 
+
+    
     
   }
 
@@ -375,5 +379,57 @@ function closeRegistrationWindow() {
   registrationWindow.style.display = "none";
   document.getElementById("registerForm").reset();
 }
+
+function closeLoginWindow() {
+  const loginWindow = document.getElementById("login-web");
+  loginWindow.style.display = "none";
+}
+function closeChatBox() {
+  const chatbox = document.getElementById("chat-container");
+  chatbox.style.display = "none";
+}
  
+
+function toggleChat() {
+    const chatContainer = document.getElementById('chat-container');
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        console.log("Mở chat box");
+        chatContainer.style.display = 'block';
+    } else {
+        console.log("Đóng chat box");
+        chatContainer.style.display = 'none';
+    }
+}
+
+function sendMessage() {
+    const input = document.getElementById('messageInput');
+    const chatBox = document.getElementById('chatBox');
+    
+    if (input.value.trim() !== "") {
+        const message = document.createElement('div');
+        message.textContent = input.value;
+        chatBox.appendChild(message);
+        input.value = ""; // Xóa input sau khi gửi
+        chatBox.scrollTop = chatBox.scrollHeight; // Cuộn xuống tin nhắn mới
+    } else {
+        console.log("Tin nhắn rỗng không được gửi");
+    }
+     
+}
+
+  window.onload = function() {
+  document.getElementById('sale-popup').style.display = 'flex';
+}
+
+// Đóng popup khi nhấn nút "X"
+  document.getElementById('close-popup').addEventListener('click', function() {
+  document.getElementById('sale-popup').style.display = 'none';
+
+  
+
+   
+
+  
+});
+
 
