@@ -106,6 +106,7 @@ body {
 
 .giohang {
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .menu {
@@ -126,7 +127,7 @@ body {
     height: 50px;
     z-index: 1001;
     padding: 10px 20px;
-    background-color: #3F9980;
+    background-color: #005c42;
     border-radius: 10px;
 }
 
@@ -138,17 +139,18 @@ body {
 
 .sidebar {
     height: 100vh;
-    width: 200 px;
+    width: 200px;
     list-style: none;
-    background-color: #4a4a4a00;
+    background-color: #0e7600;
     position: fixed;
-    top: 90px;
+    top: 85px;
     left: -300px;
     transition: 0.5s;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 15px #000000;
 }
+
 
 .sidebar-open {
     left: 0;
@@ -163,24 +165,24 @@ body {
 }
 
 .sidebar li:hover {
-    border-left: 5px solid gray;
+    border-left: 5px solid #61fc00;
 }
 
 .sidebar li a {
     display: block;
     width: 100%;
     padding: 20px;
-    padding-left: 5px;
     text-transform: capitalize;
     transition: 0.3s;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     text-decoration: none;
-    color: #333;
+    color: black;
 }
 
 .sidebar li a:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: red;
 }
 
 .sidebar li i {
@@ -197,9 +199,9 @@ body {
     margin-top: 30px;
     padding: 10px;
     position: relative;
-    top: 18px;
-
+    top: 15px;
     align-items: center;
+    z-index: 1;
 
 
 }
@@ -325,14 +327,10 @@ input[type="password"] {
     width: 300px;
     text-align: center;
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.register-web.hide{
-    display: block;
-}
-
 
 .notification {
     padding: 15px;
@@ -340,7 +338,8 @@ input[type="password"] {
     border: 1px solid transparent;
     border-radius: 4px;
     font-weight: bold;
-    display: none; /* Ẩn thông báo ban đầu */
+    display: none;
+    /* Ẩn thông báo ban đầu */
     width: auto;
     text-align: center;
 }
@@ -365,6 +364,21 @@ input[type="password"] {
     display: none;
 }
 
+.chat-button {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    background-color: #005c42;
+    color: white;
+    border: none;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -379,6 +393,7 @@ input[type="password"] {
 .close-btn:hover {
     color: red;
 }
+
 /* Popup quảng cáo */
 .sale-popup {
     display: none;
@@ -388,7 +403,7 @@ input[type="password"] {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    z-index: 1001;
     justify-content: center;
     align-items: center;
 }
@@ -406,15 +421,180 @@ input[type="password"] {
 
 .close-btn {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     font-size: 24px;
     cursor: pointer;
     background: none;
     border: none;
 }
+
 /* Hiệu ứng mờ dần */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.chat-container {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 90px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    text-align: 200;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    color: #005c42;
+}
+
+.chat-content {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto; 
+    min-height: 280px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.chat-footer button {
+    background-color: #005c42;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.chat-footer button:hover {
+    background-color: #004730;
+}
+
+.auto-chat {
+    background-color:#005c42 ;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 50px;
+    
+}
+
+/* Subscribe Section */
+.subscribe {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.subscribe input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-subscribe {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Dịch chuyển để nằm đúng ở giữa chiều dọc */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối để icon dễ nhìn */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Đảm bảo icon nằm trên hình ảnh */
+    font-size: 36px; /* Kích thước icon */
+}
+
+.left-arrow {
+    left: 10px; /* Đặt mũi tên trái cách lề trái 10px */
+}
+
+.right-arrow {
+    right: 10px; /* Đặt mũi tên phải cách lề phải 10px */
 }
