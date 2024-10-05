@@ -425,11 +425,26 @@ function sendMessage() {
   document.getElementById('close-popup').addEventListener('click', function() {
   document.getElementById('sale-popup').style.display = 'none';
 
-  
-
-   
-
-  
 });
 
+const images = [
+  "https://noithattrevietnam.com/uploaded/2018/08/1-mau-nha-dep-noi-that-hien-dai-can-80m2%20%281%29.jpg",  // Hình 1
+  "https://donggia.vn/wp-content/uploads/2020/08/thi-cong-noi-that-phong-khach-biet-thu-dep-2020.jpg",    // Hình 2
+  "https://homehome.vn/wp-content/uploads/6-mau-hinh-anh-noi-that-nha-dep-theo-phong-cach-hien-dai-2.jpg"     // Hình 3
+];
 
+let currentImageIndex = 0;
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateBanner();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateBanner();
+}
+
+function updateBanner() {
+  document.getElementById('bannerImage').src = images[currentImageIndex];
+}

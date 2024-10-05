@@ -452,7 +452,7 @@ input[type="password"] {
 }
 
 .chat-header {
-    text-align: ;
+    text-align: 200;
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
@@ -516,4 +516,82 @@ input[type="password"] {
     font-size: 14px;
     border-radius: 50px;
     
+}
+
+/* Subscribe Section */
+.subscribe {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.subscribe input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-subscribe {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Dịch chuyển để nằm đúng ở giữa chiều dọc */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối để icon dễ nhìn */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Đảm bảo icon nằm trên hình ảnh */
+    font-size: 36px; /* Kích thước icon */
+}
+
+.left-arrow {
+    left: 10px; /* Đặt mũi tên trái cách lề trái 10px */
+}
+
+.right-arrow {
+    right: 10px; /* Đặt mũi tên phải cách lề phải 10px */
 }
