@@ -313,15 +313,12 @@ function login() {
   // window.location.href = "/home";
 }
 
-
 function register() {
   const username = document.getElementById("register-username").value;
   const password = document.getElementById("register-password").value;
   const confirmPassword = document.getElementById("confirm-password").value;
   const otp = document.getElementById("otp").value;
   const registerNotification = document.getElementById("notification");
-
-
 
   registerNotification.classList.remove("show");
   "show", "error", "success";
@@ -346,7 +343,7 @@ function register() {
     registerNotification.textContent = "Vui lòng điền đầy đủ thông tin!";
     registerNotification.classList.remove("hide");
     registerNotification.classList.add("error", "show");
- } else if (password !== confirmPassword) {
+  } else if (password !== confirmPassword) {
     document.getElementById("register-password").value = "";
     document.getElementById("confirm-password").value = "";
 
@@ -357,14 +354,10 @@ function register() {
     registerNotification.textContent = "Tài khoản đăng ký thành công!";
     registerNotification.classList.remove("hide");
     registerNotification.classList.add("success", "show");
-     
+
     setTimeout(() => {
       closeRegistrationWindow();
     }, 1000);
-
-
-    
-    
   }
 
   // Lưu tài khoản vào file SQL (Chỉ là một ví dụ, cần có server để thực hiện)
@@ -388,48 +381,297 @@ function closeChatBox() {
   const chatbox = document.getElementById("chat-container");
   chatbox.style.display = "none";
 }
- 
 
 function toggleChat() {
-    const chatContainer = document.getElementById('chat-container');
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-        console.log("Mở chat box");
-        chatContainer.style.display = 'block';
-    } else {
-        console.log("Đóng chat box");
-        chatContainer.style.display = 'none';
-    }
+  const chatContainer = document.getElementById("chat-container");
+  if (
+    chatContainer.style.display === "none" ||
+    chatContainer.style.display === ""
+  ) {
+    console.log("Mở chat box");
+    chatContainer.style.display = "block";
+  } else {
+    console.log("Đóng chat box");
+    chatContainer.style.display = "none";
+  }
 }
 
 function sendMessage() {
-    const input = document.getElementById('messageInput');
-    const chatBox = document.getElementById('chatBox');
-    
-    if (input.value.trim() !== "") {
-        const message = document.createElement('div');
-        message.textContent = input.value;
-        chatBox.appendChild(message);
-        input.value = ""; // Xóa input sau khi gửi
-        chatBox.scrollTop = chatBox.scrollHeight; // Cuộn xuống tin nhắn mới
-    } else {
-        console.log("Tin nhắn rỗng không được gửi");
-    }
-     
+  const input = document.getElementById("messageInput");
+  const chatBox = document.getElementById("chatBox");
+
+  if (input.value.trim() !== "") {
+    const message = document.createElement("div");
+    message.textContent = input.value;
+    chatBox.appendChild(message);
+    input.value = ""; // Xóa input sau khi gửi
+    chatBox.scrollTop = chatBox.scrollHeight; // Cuộn xuống tin nhắn mới
+  } else {
+    console.log("Tin nhắn rỗng không được gửi");
+  }
 }
 
-  window.onload = function() {
-  document.getElementById('sale-popup').style.display = 'flex';
-}
+window.onload = function () {
+  document.getElementById("sale-popup").style.display = "flex";
+};
 
 // Đóng popup khi nhấn nút "X"
-  document.getElementById('close-popup').addEventListener('click', function() {
-  document.getElementById('sale-popup').style.display = 'none';
+document.getElementById("close-popup").addEventListener("click", function () {
+  document.getElementById("sale-popup").style.display = "none";
+});
 
-  
+// Hàm mở phần Giới thiệu
+function openAboutSection() {
+  document.getElementById("about-section").style.display = "block";
+}
 
-   
+// Hàm đóng phần Giới thiệu
+function closeAboutSection() {
+  document.getElementById("about-section").style.display = "none";
+}
 
-  
+const images = [
+  "https://noithattrevietnam.com/uploaded/2018/08/1-mau-nha-dep-noi-that-hien-dai-can-80m2%20%281%29.jpg", // Hình 1
+  "https://donggia.vn/wp-content/uploads/2020/08/thi-cong-noi-that-phong-khach-biet-thu-dep-2020.jpg", // Hình 2
+  "https://homehome.vn/wp-content/uploads/6-mau-hinh-anh-noi-that-nha-dep-theo-phong-cach-hien-dai-2.jpg", // Hình 3
+];
+
+let currentImageIndex = 0;
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateBanner();
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateBanner();
+}
+
+function updateBanner() {
+  document.getElementById("bannerImage").src = images[currentImageIndex];
+}
+
+function openProductList() {
+  document.getElementById("product-list").style.display = "block";
+}
+
+// Hàm đóng phần Giới thiệu
+function closeProductList() {
+  document.getElementById("product-list").style.display = "none";
+}
+
+// Hàm tắt danhh sách sản phẩm
+document.addEventListener("DOMContentLoaded", () => {
+  const productMenu = document.querySelector(".product-menu");
+  const productList = document.querySelector(".product-list");
+  productList.style.display = "none";
+  let timeout; // Biến để lưu timeout
+
+  productMenu.addEventListener("mouseenter", () => {
+    clearTimeout(timeout); // Xóa timeout nếu chuột vào menu
+    productList.style.display = "grid"; // Hiện danh sách khi chuột vào menu
+  });
+
+  productMenu.addEventListener("mouseleave", () => {
+    // Bắt đầu timer khi chuột rời khỏi menu
+    timeout = setTimeout(() => {
+      productList.style.display = "none";
+    }, 300);
+  });
+
+  productList.addEventListener("mouseenter", () => {
+    clearTimeout(timeout); // Xóa timeout nếu chuột vào danh sách
+    productList.style.display = "grid"; // Giữ danh sách mở
+  });
+
+  productList.addEventListener("mouseleave", () => {
+    // Bắt đầu timer khi chuột rời khỏi danh sách
+    productList.style.display = "none"; // Ẩn danh sách sau 1 giây
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const saleMenu = document.querySelector(".sale");
+  const lienHe = document.querySelector(".lien-he");
+  saleMenu.style.display = "none";
+  lienHe.style.display = "none";
+  let timeout; // Biến để lưu timeout
+
+  // Hiện menu khi di chuột vào
+  saleMenu.parentElement.addEventListener("mouseenter", () => {
+    clearTimeout(timeout); // Xóa timeout nếu chuột vào menu
+    saleMenu.style.display = "block"; // Hiện danh sách sale
+  });
+
+  // Ẩn menu khi chuột rời khỏi
+  saleMenu.parentElement.addEventListener("mouseleave", () => {
+    // Bắt đầu timer khi chuột rời khỏi menu
+    timeout = setTimeout(() => {
+      saleMenu.style.display = "none";
+    }, 100);
+  });
+
+  lienHe.parentElement.addEventListener("mouseenter", () => {
+    clearTimeout(timeout); // Xóa timeout nếu chuột vào danh sách liên hệ
+    lienHe.style.display = "block"; // Giữ danh sách liên hệ mở
+  });
+
+  lienHe.parentElement.addEventListener("mouseleave", () => {
+    // Bắt đầu timer khi chuột rời khỏi danh sách liên hệ
+    timeout = setTimeout(() => {
+      lienHe.style.display = "none";
+    }, 100);
+  });
 });
 
 
+// Hàm cập nhật nội dung khi người dùng nhấn vào danh mục sản phẩm
+// Hàm cập nhật nội dung khi người dùng nhấn vào danh mục sản phẩm
+function showProductSection() {
+    // Xóa nội dung của phần banner
+    const banner = document.getElementById('banner');
+    if (banner) {
+        banner.remove(); // Xóa phần tử banner khỏi DOM
+    }
+
+    // Tạo div cho phần sản phẩm
+    const productSection = document.createElement('div');
+    productSection.classList.add('product-section');
+
+    // Tạo ảnh lớn cho sản phẩm
+    const productImage = document.createElement('img');
+    productImage.src = 'imageWeb/mainProduct.png'; // Đường dẫn hình ảnh chính
+    productImage.alt = 'Sản phẩm';
+    productImage.style.width = '100%'; // Ảnh toàn màn hình
+    productImage.style.height = 'auto'; // Giữ tỉ lệ
+
+    // Tạo bộ lọc
+    const filterSection = document.createElement('div');
+    filterSection.classList.add('filter-section');
+
+    // Bộ lọc giá
+    const priceFilter = document.createElement('div');
+    priceFilter.classList.add('filter-item');
+    
+    const priceLabel = document.createElement('label');
+    priceLabel.textContent = 'Giá';
+    
+    const priceSelect = document.createElement('select');
+    const priceOptions = ['Theo mức độ phổ biến', 'Giá thấp đến cao', 'Giá cao đến thấp'];
+    
+    priceOptions.forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        priceSelect.appendChild(option);
+    });
+
+    priceFilter.appendChild(priceLabel);
+    priceFilter.appendChild(priceSelect);
+
+    // Bộ lọc chất liệu
+    const materialFilter = document.createElement('div');
+    materialFilter.classList.add('filter-item');
+    
+    const materialLabel = document.createElement('label');
+    materialLabel.textContent = 'Chất liệu';
+    
+    const materialSelect = document.createElement('select');
+    const materialOptions = ['Tất cả', 'Gỗ', 'Kim loại', 'Nhựa', 'Vải'];
+
+    materialOptions.forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        materialSelect.appendChild(option);
+    });
+
+    materialFilter.appendChild(materialLabel);
+    materialFilter.appendChild(materialSelect);
+
+    // Nút Áp Dụng
+    const applyButton = document.createElement('button');
+    applyButton.textContent = 'ÁP DỤNG';
+    applyButton.classList.add('apply-button');
+
+    // Thêm các phần tử bộ lọc vào phần filterSection
+    filterSection.appendChild(priceFilter);
+    filterSection.appendChild(materialFilter);
+    filterSection.appendChild(applyButton);
+
+    // Tạo danh sách sản phẩm
+    const productGrid = document.createElement('div');
+    productGrid.classList.add('product-grid');
+
+    const products = [
+        {
+            name: 'Armchair',
+            price: '2.000.000 VNĐ',
+            image: 'imageWeb/Ghe1.png'
+        },
+        {
+            name: 'Bàn ăn',
+            price: '1.500.000 VNĐ',
+            image: 'imageWeb/BanAn1.png'
+        },
+        {
+            name: 'Kệ tivi',
+            price: '1.800.000 VNĐ',
+            image: 'imageWeb/KeTV1.png'
+        },
+        {
+            name: 'Bàn làm việc',
+            price: '800.000 VNĐ',
+            image: 'imageWeb/BanLamViec.png'
+        },
+        {
+            name: 'Armchair kèm gối 1',
+            price: '800.000 VNĐ',
+            image: 'imageWeb/Ghe2.png'
+        },
+        {
+            name: 'Armchair kèm gối 2',
+            price: '800.000 VNĐ',
+            image: 'imageWeb/Ghe2.png'
+        }
+    ];
+
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        const title = document.createElement('h3');
+        title.textContent = product.name;
+
+        const price = document.createElement('p');
+        price.classList.add('price');
+        price.textContent = `Giá: ${product.price}`;
+
+        // Thêm các phần tử vào sản phẩm
+        productItem.appendChild(img);
+        productItem.appendChild(title);
+        productItem.appendChild(price);
+        productGrid.appendChild(productItem);
+    });
+
+    // Thêm ảnh lớn, danh sách sản phẩm và bộ lọc vào div
+    productSection.appendChild(productImage);
+    productSection.appendChild(filterSection);
+    productSection.appendChild(productGrid);
+    // Thêm phần sản phẩm vào trước footer
+    const footer = document.getElementById('footer');
+    const subscribe = document.getElementById('subscribe')
+    footer.insertAdjacentElement('beforebegin', productSection);
+    subscribe.insertAdjacentElement('beforebegin', productSection);
+}
+
+// Gán sự kiện cho mục "Sản phẩm" trong hàm khởi tạo
+document.querySelector('.product-menu a').addEventListener('click', function(event) {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    showProductSection(); // Gọi hàm để hiển thị phần sản phẩm
+});

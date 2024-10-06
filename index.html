@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/cc9450bd42.js" crossorigin="anonymous"></script>
     <link rel="icon" href="imageWeb/IconWEB.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Vật Liệu ABK</title>
 </head>
 <body>
@@ -106,12 +107,113 @@
     
 
     <div class="taskbar">
-        <div class="menubar"> 
-            <li><a href="#">Sản phẩm chính</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Ưu đãi</a></li>
-            <li><a href="#">Liên hệ ngay</a></li>
-        </div>
+        <ul class="menubar"> 
+            <li class="product-menu">
+                <a href="#">Sản phẩm <i class="fa-solid fa-angle-down"></i> </a> 
+                <div class="product-list">
+                    <ul>
+                        <li><a href="#"><strong>Nội thất phòng khách</strong></a></li>
+                            <ul>
+                                <li><a href="">Sofa hiện đại</a></li><br>
+                                <li><a href="">Bàn trà gỗ</a></li><br>
+                                <li><a href="">Kệ tivi</a></li><br>
+                                <li><a href="">Ghế đọc sách</a></li><br>
+                                <li><a href="">Bàn console</a></li><br>
+                                <li><a href="">Tủ sách</a></li><br>
+                                <li><a href="">Đèn bàn</a></li><br>
+                                <li><a href="">Thảm trải sàn</a></li><br>
+                            </ul>
+                        <li><a href=""><strong>Nội thất nhà bếp</strong></a></li>
+                             <ul>
+                                <li><a href="">Bàn ăn bằng gỗ</a></li><br>
+                                <li><a href="">Ghế ăn</a></li><br>
+                                <li><a href="">Tủ bếp đa năng</a></li><br>
+                                <li><a href="">Kệ đựng gia vị</a></li><br>
+                                <li><a href="">Máy pha cà phê</a></li><br>
+                                <li><a href="">Bồn rửa bát</a></li><br>
+                                <li><a href="">Tủ lạnh</a></li><br>
+                                <li><a href="">Bếp điện từ</a></li><br>
+                            </ul>
+                    </ul>
+                    <ul>
+                        <li><a href=""><strong>Nội thất phòng ngủ</strong></a></li>
+                            <ul>
+                                <li><a href="">Giường ngủ bọc nệm</a></li><br>
+                                <li><a href="">Tủ quần áo</a></li><br>
+                                <li><a href="">Bàn trang điểm</a></li><br>
+                                <li><a href="">Kệ sách</a></li><br>
+                                <li><a href="">Đèn ngủ</a></li><br>
+                                <li><a href="">Bàn đầu giường</a></li><br>
+                                <li><a href="">Gương trang điểm</a></li><br>
+                                <li><a href="">Chăn ga gối</a></li><br>
+                            </ul>
+                        <li><a href=""><strong>Nội thất phòng tắm</strong></a></li>
+                            <ul>
+                                <li><a href="">Gương trang điểm</a></li><br>
+                                <li><a href="">Kệ để đồ vệ sinh</a></li><br>
+                                <li><a href="">Bồn tắm</a></li><br>
+                                <li><a href="">Vòi sen hiện đại</a></li><br>
+                                <li><a href="">Thảm phòng tắm</a></li><br>
+                                <li><a href="">Giá treo khăn</a></li><br>
+                                <li><a href="">Bộ đồ vệ sinh</a></li><br>
+                                <li><a href="">Chậu rửa mặt</a></li><br>
+                            </ul>
+                    </ul>
+                    <ul>
+                        <li><a href=""><strong>Nội thất nhà ăn</strong></a></li>
+                            <ul>
+                                <li><a href="">Bàn ăn tròn</a></li><br>
+                                <li><a href="">Ghế bành</a></li><br>
+                                <li><a href="">Đèn chùm</a></li><br>
+                                <li><a href="">Tủ đựng rượu</a></li><br>
+                                <li><a href="">Bàn ăn chữ nhật</a></li><br>
+                                <li><a href="">Ghế xếp</a></li><br>
+                                <li><a href="">Bộ đồ ăn</a></li><br>
+                                <li><a href="">Ly uống rượu</a></li><br>
+                            </ul>
+                        <li><a href=""><strong>Vật dụng khác</strong></a></li>
+                            <ul>
+                                <li><a href="">Thảm trải sàn</a></li><br>
+                                <li><a href="">Bình hoa</a></li><br>
+                                <li><a href="">Đèn bàn</a></li><br>
+                                <li><a href="">Tranh treo tường</a></li><br>
+                                <li><a href="">Khung tranh</a></li><br>
+                                <li><a href="">Gối tựa lưng</a></li><br>
+                                <li><a href="">Đồ trang trí</a></li><br>
+                                <li><a href="">Chậu cây cảnh</a></li><br>
+                            </ul>
+                    </ul>
+                    <ul>
+                         <img src="imageWeb/productList.jpg" alt="demo san pham" style="width: 100%; height: auto;">
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" onclick="openAboutSection()">Giới thiệu</a>
+               <div class="about-section" id="about-section" style="display: none;">
+                <button class="close-btn" onclick="closeAboutSection()">×</button>
+                    <h2>Chào mừng đến với Vật Liệu ABK</h2>
+                    <p>Chúng tôi chuyên cung cấp các sản phẩm nội thất chất lượng cao và dịch vụ tuyệt vời</p>
+                    <img src="imageWeb/GioiThieu.jpg" alt="Nội thất chất lượng" width="400px" class="about-image">
+
+                     <p>Với nhiều năm kinh nghiệm trong ngành, chúng tôi tự hào mang đến sự hài lòng tuyệt đối về cả chất lượng và giá cả.</p>
+                </div>
+            </li>
+            <li><a href="#">Ưu đãi</a>
+                <ul class="sale">
+                    <li><a href="">Sale 80%</a></li><br>
+                    <li><a href="">Sale 60%</a></li><br>
+                    <li><a href="">Mua 1 tặng 1</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">Liên hệ</a>
+                <ul class="lien-he">
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook </a></li>
+                    <li><a href=""><i class="fa-solid fa-phone"></i> 0978231821 </a></li>
+
+                </ul>
+            </li>
+        </ul>
     </div>
     
     <div class="sale-popup" id="sale-popup">
@@ -136,6 +238,7 @@
     </button>
 
     <div class="chat-container" id="chat-container" style="display: none">
+        
         <div class="chat-header" id="chat-header">
              <i class="fa fa-comment">chat</i>
             <button class="close-btn" onclick="closeChatBox()">×</button>
@@ -143,7 +246,7 @@
 
         <div class="chat-content" id="chat-content">
             <div class="auto-chat" id="auto-chat">
-                Xin chào! Tôi có thể giúp gì cho bạn?
+                Xin chào! Chúng tôi có thể giúp gì cho bạn?
             </div>
             
         </div>
@@ -154,9 +257,75 @@
         </div>
        
     </div>
+    
+    
+      <div class="banner" id="banner">
+        <img id="bannerImage" src="https://chupanhnoithat.vn/upload/images/saddww.jpg" alt="Banner Image">
+        <div class="arrow left-arrow" onclick="prevImage()">
+            <i class="fas fa-chevron-left"></i> <!-- Icon mũi tên trái -->
+        </div>
+        <div class="arrow right-arrow" onclick="nextImage()">
+            <i class="fas fa-chevron-right"></i> <!-- Icon mũi tên phải -->
+        </div>
+    </div>
+
+        <div id="products-section" style="display: none;">
+            <img src="imageWeb/mainProduct.png" alt="Hình ảnh lớn" style="width: 100%; height: auto;">
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="imageWeb/Ghe1.png" alt="Sofa hiện đại">
+                    <h3>Sofa hiện đại</h3>
+                    <p class="price">Giá: 2.000.000 VNĐ</p>
+                </div>
+                <div class="product-item">
+                    <img src="imageWeb/Ghe2.jpg" alt="Bàn trà gỗ">
+                    <h3>Bàn trà gỗ</h3>
+                    <p class="price">Giá: 1.500.000 VNĐ</p>
+                </div>
+                <div class="product-item">
+                    <img src="imageWeb/product3.jpg" alt="Kệ tivi">
+                    <h3>Kệ tivi</h3>
+                    <p class="price">Giá: 1.800.000 VNĐ</p>
+                </div>
+                <div class="product-item">
+                    <img src="imageWeb/product4.jpg" alt="Ghế đọc sách">
+                    <h3>Ghế đọc sách</h3>
+                    <p class="price">Giá: 800.000 VNĐ</p>
+                </div>
+    <!-- Thêm các sản phẩm khác tương tự -->
+                </div>
+
+        </div>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe" id="subscribe">
+        <h2>MUA NỘI THẤT NGAY!</h2>
+        <p>Just Subscribe to get full access to our new tutorial + all attachment files.</p>
+        <form>
+            <input type="text" placeholder="Enter Your Full Name">
+            <input type="email" placeholder="Enter Your Email">
+            <button type="submit" class="btn-subscribe">Contact now 0987654321</button>
+        </form>
+    </section>
+     
+    
 
 
+  
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <p>All rights reserved &copy; 2024 ABK Company</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 
     <script src="func.js"></script>
 </body>
+
+
+
+
 </html>
